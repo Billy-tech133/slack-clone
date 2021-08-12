@@ -33,22 +33,24 @@ function Sidebar() {
         </SidebarInfo>
         <Create />
       </SidebarHeader>
-      <SidebarOption Icon={InsertComment} title="Threads" />
-      <SidebarOption Icon={Inbox} title="Mentions & Reactions" />
-      <SidebarOption Icon={Drafts} title="Saved items" />
-      <SidebarOption Icon={BookmarkBorder} title="Channel browser" />
-      <SidebarOption Icon={PeopleAlt} title="People & user groups" />
-      <SidebarOption Icon={Apps} title="Apps" />
-      <SidebarOption Icon={FileCopy} title="File browser" />
-      <SidebarOption Icon={ExpandLess} title="Show less" />
-      <hr />
-      <SidebarOption Icon={ExpandMore} title="Channels" />
-      <hr />
-      <SidebarOption Icon={Add} addChannelOption title="Add Channels" />
+      <SidebarBody>
+        <SidebarOption Icon={InsertComment} title="Threads" />
+        <SidebarOption Icon={Inbox} title="Mentions & Reactions" />
+        <SidebarOption Icon={Drafts} title="Saved items" />
+        <SidebarOption Icon={BookmarkBorder} title="Channel browser" />
+        <SidebarOption Icon={PeopleAlt} title="People & user groups" />
+        <SidebarOption Icon={Apps} title="Apps" />
+        <SidebarOption Icon={FileCopy} title="File browser" />
+        <SidebarOption Icon={ExpandLess} title="Show less" />
+        <hr />
+        <SidebarOption Icon={ExpandMore} title="Channels" />
+        <hr />
+        <SidebarOption Icon={Add} addChannelOption title="Add Channels" />
 
-      {channels?.docs.map((doc) => {
-        return <SidebarOption key={doc.id} title={doc.data().name} />;
-      })}
+        {channels?.docs.map((doc) => {
+          return <SidebarOption key={doc.id} title={doc.data().name} />;
+        })}
+      </SidebarBody>
     </SidebarContainer>
   );
 }
@@ -68,6 +70,11 @@ const SidebarContainer = styled.div`
     margin-bottom: 10px;
     border: 1px solid #49274b;
   }
+`;
+
+const SidebarBody = styled.div`
+  height: 100vh;
+  overflow-y: scroll;
 `;
 const SidebarHeader = styled.div`
   display: flex;
