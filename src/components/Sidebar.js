@@ -48,7 +48,7 @@ function Sidebar() {
         <SidebarOption Icon={Add} addChannelOption title="Add Channels" />
 
         {channels?.docs.map((doc) => {
-          return <SidebarOption key={doc.id} title={doc.data().name} />;
+          return <SidebarOption id={doc.id} title={doc.data().name} />;
         })}
       </SidebarBody>
     </SidebarContainer>
@@ -63,8 +63,8 @@ const SidebarContainer = styled.div`
   flex: 0.3;
   border-top: 3px solid #49274b;
   max-width: 260px;
-  margin-top: 60px;
-
+  margin-top: 230px;
+  height: 100%;
   > hr {
     margin-top: 10px;
     margin-bottom: 10px;
@@ -73,14 +73,13 @@ const SidebarContainer = styled.div`
 `;
 
 const SidebarBody = styled.div`
-  height: 100vh;
   overflow-y: scroll;
 `;
 const SidebarHeader = styled.div`
+  margin-top: 60px;
   display: flex;
   border-bottom: 1px solid #49274b;
   padding: 13px;
-
   > .MuiSvgIcon-root {
     padding: 8px;
     color: #49274b;

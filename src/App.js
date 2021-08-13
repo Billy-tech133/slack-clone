@@ -10,8 +10,8 @@ function App() {
     <div className="app">
       <Router>
         <>
-          <Header />
           <AppBody>
+            <Header />
             <Sidebar />
             <Switch>
               <Route path="/" exact>
