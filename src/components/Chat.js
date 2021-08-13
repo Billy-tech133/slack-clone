@@ -115,7 +115,7 @@ const ChatContainer = styled.div`
   flex-grow: 1;
   overflow-y: scroll;
   height: 100vh;
-  margin-top: 230px;
+  margin-top: 60px;
   margin-bottom: -60px;
 `;
 

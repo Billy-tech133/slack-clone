@@ -4,7 +4,7 @@ import React from "react";
 function Message({ message, timestamp, user, userImage }) {
   return (
     <MessageContainer>
-      <img src={userImage} alt="" />
+      <img src={userImage} alt="User" />
       <MessageInfo>
         <h4>
           {user}
